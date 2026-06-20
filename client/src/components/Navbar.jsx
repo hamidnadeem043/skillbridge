@@ -57,8 +57,8 @@ const Navbar = () => {
     <nav className="flex items-center justify-between px-10 py-4 bg-white shadow-md">
 
       <Link to='/' className="text-2xl font-bold text-green-600">
-        FreelanceHub
-      </Link>
+  SkillBridge
+</Link>
 
       <div className="flex items-center gap-6">
         <Link to='/gigs' className="text-gray-600 hover:text-green-600">
