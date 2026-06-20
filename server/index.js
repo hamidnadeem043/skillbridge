@@ -22,8 +22,13 @@ dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 5000
 
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://skillbridge-gamma-eight.vercel.app'
+]
+
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: allowedOrigins,
   credentials: true
 }))
 app.use(express.json())
@@ -47,7 +52,7 @@ const httpServer = createServer(app)
 // Attach Socket.io to the server
 const io = new Server(httpServer, {
   cors: {
-    origin: 'http://localhost:5173',
+    origin: allowedOrigins,
     credentials: true
   }
 })
