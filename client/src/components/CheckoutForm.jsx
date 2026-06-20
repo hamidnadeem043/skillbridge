@@ -16,9 +16,7 @@ const CheckoutForm = () => {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        confirmParams: {
-  return_url: 'https://skillbridge-gamma-eight.vercel.app/orders'
-}
+        return_url: 'https://skillbridge-gamma-eight.vercel.app/orders'
       }
     })
 
