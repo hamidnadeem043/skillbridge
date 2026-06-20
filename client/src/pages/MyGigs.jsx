@@ -12,7 +12,7 @@ const MyGigs = () => {
     const fetchMyGigs = async () => {
       setLoading(true)
       try {
-        const res = await axios.get(`http://localhost:5000/api/gigs?userId=${currentUser._id}`)
+        const res = await axios.get(`https://skillbridge-production-cfdd.up.railway.app/api/gigs?userId=${currentUser._id}`)
         setGigs(res.data)
       } catch (error) {
         console.log(error)
@@ -26,7 +26,7 @@ const MyGigs = () => {
     if (!window.confirm('Are you sure you want to delete this gig?')) return
 
     try {
-      await axios.delete(`http://localhost:5000/api/gigs/${id}`, {
+      await axios.delete(`https://skillbridge-production-cfdd.up.railway.app/api/gigs/${id}`, {
         withCredentials: true
       })
       setGigs(prev => prev.filter(gig => gig._id !== id))

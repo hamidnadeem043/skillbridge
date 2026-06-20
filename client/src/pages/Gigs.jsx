@@ -35,7 +35,7 @@ const Gigs = () => {
     setLoading(true)
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/gigs${search ? search + '&' : '?'}sort=${sort}`
+        `https://skillbridge-production-cfdd.up.railway.app/api/gigs${search ? search + '&' : '?'}sort=${sort}`
       )
       setGigs(res.data)
     } catch (error) {

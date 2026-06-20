@@ -17,7 +17,7 @@ const Message = () => {
   useEffect(() => {
     const fetchConversation = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/conversations/single/${id}`, {
+        const res = await axios.get(`https://skillbridge-production-cfdd.up.railway.app/api/conversations/single/${id}`, {
           withCredentials: true
         })
         setConversation(res.data)
@@ -32,7 +32,7 @@ const Message = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/messages/${id}`, {
+        const res = await axios.get(`https://skillbridge-production-cfdd.up.railway.app/api/messages/${id}`, {
           withCredentials: true
         })
         setMessages(res.data)
@@ -66,7 +66,7 @@ const Message = () => {
 
     try {
       const res = await axios.post(
-        'http://localhost:5000/api/messages',
+        'https://skillbridge-production-cfdd.up.railway.app/api/messages',
         { conversationId: id, desc: text },
         { withCredentials: true }
       )

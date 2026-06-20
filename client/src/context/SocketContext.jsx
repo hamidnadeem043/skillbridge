@@ -9,7 +9,7 @@ export const SocketProvider = ({ children }) => {
   const { currentUser } = useSelector(state => state.user)
 
   useEffect(() => {
-    const newSocket = io('http://localhost:5000')
+    const newSocket = io('https://skillbridge-production-cfdd.up.railway.app')
     setSocket(newSocket)
 
     return () => newSocket.close()

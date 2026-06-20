@@ -18,7 +18,7 @@ const Navbar = () => {
 
     const fetchUnread = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/conversations', {
+        const res = await axios.get('https://skillbridge-production-cfdd.up.railway.app/api/conversations', {
           withCredentials: true
         })
         const unread = res.data.filter(c =>
@@ -45,7 +45,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:5000/api/auth/logout', {}, { withCredentials: true })
+      await axios.post('https://skillbridge-production-cfdd.up.railway.app/api/auth/logout', {}, { withCredentials: true })
       dispatch(logout())
       navigate('/')
     } catch (error) {

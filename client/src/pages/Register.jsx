@@ -21,7 +21,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('http://localhost:5000/api/auth/register', formData)
+      await axios.post('https://skillbridge-production-cfdd.up.railway.app/api/auth/register', formData)
       navigate('/login')
     } catch (error) {
       console.log(error)

@@ -15,7 +15,7 @@ const Pay = () => {
     const createPaymentIntent = async () => {
       try {
         const res = await axios.post(
-          `http://localhost:5000/api/orders/create-payment-intent`,
+          `https://skillbridge-production-cfdd.up.railway.app/api/orders/create-payment-intent`,
           { gigId: id },
           { withCredentials: true }
         )

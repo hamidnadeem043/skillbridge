@@ -12,7 +12,7 @@ const Messages = () => {
     const fetchConversations = async () => {
       setLoading(true)
       try {
-        const res = await axios.get('http://localhost:5000/api/conversations', {
+        const res = await axios.get('https://skillbridge-production-cfdd.up.railway.app/api/conversations', {
           withCredentials: true
         })
         setConversations(res.data)

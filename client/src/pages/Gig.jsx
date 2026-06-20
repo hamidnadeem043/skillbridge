@@ -18,7 +18,7 @@ const Gig = () => {
     const fetchGig = async () => {
       setLoading(true)
       try {
-        const res = await axios.get(`http://localhost:5000/api/gigs/single/${id}`)
+        const res = await axios.get(`https://skillbridge-production-cfdd.up.railway.app/api/gigs/single/${id}`)
         setGig(res.data)
       } catch (error) {
         console.log(error)
@@ -31,7 +31,7 @@ const Gig = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/reviews/${id}`)
+        const res = await axios.get(`https://skillbridge-production-cfdd.up.railway.app/api/reviews/${id}`)
         setReviews(res.data)
       } catch (error) {
         console.log(error)
@@ -46,7 +46,7 @@ const Gig = () => {
 
     try {
       const res = await axios.post(
-        'http://localhost:5000/api/reviews',
+        'https://skillbridge-production-cfdd.up.railway.app/api/reviews',
         {
           gigId: id,
           username: currentUser.username,

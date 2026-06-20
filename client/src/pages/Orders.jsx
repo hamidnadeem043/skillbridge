@@ -22,7 +22,7 @@ const Orders = () => {
       if (paymentIntent) {
         try {
           await axios.put(
-            `http://localhost:5000/api/orders/confirm/${paymentIntent}`,
+            `https://skillbridge-production-cfdd.up.railway.app/api/orders/confirm/${paymentIntent}`,
             {},
             { withCredentials: true }
           )
@@ -32,7 +32,7 @@ const Orders = () => {
       }
 
       try {
-        const res = await axios.get('http://localhost:5000/api/orders', {
+        const res = await axios.get('https://skillbridge-production-cfdd.up.railway.app/api/orders', {
           withCredentials: true
         })
         setSellingOrders(res.data.sellingOrders)
@@ -53,14 +53,14 @@ const Orders = () => {
 
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/conversations/single/${id}`,
+        `https://skillbridge-production-cfdd.up.railway.app/api/conversations/single/${id}`,
         { withCredentials: true }
       )
       navigate(`/message/${res.data.id}`)
     } catch (error) {
       if (error.response?.status === 404) {
         const res = await axios.post(
-          'http://localhost:5000/api/conversations',
+          'https://skillbridge-production-cfdd.up.railway.app/api/conversations',
           { to: currentUser.isSeller ? buyerId : sellerId },
           { withCredentials: true }
         )

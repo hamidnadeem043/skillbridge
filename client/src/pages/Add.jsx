@@ -30,7 +30,7 @@ const Add = () => {
     data.append('image', file)
 
     try {
-      const res = await axios.post('http://localhost:5000/api/upload', data)
+      const res = await axios.post('https://skillbridge-production-cfdd.up.railway.app/api/upload', data)
       setFormData(prev => ({ ...prev, coverImage: res.data.url }))
     } catch (error) {
       console.log(error)
@@ -59,7 +59,7 @@ const Add = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('http://localhost:5000/api/gigs', formData, {
+      await axios.post('https://skillbridge-production-cfdd.up.railway.app/api/gigs', formData, {
         withCredentials: true
       })
       navigate('/gigs')
